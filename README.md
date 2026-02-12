@@ -28,7 +28,7 @@ El juego incluye:
 ## 🚀 Demo en línea
 
 GitHub Pages:  
-👉 https://TU-USUARIO.github.io/NOMBRE-REPO/
+👉 https://yeliana267.github.io/devops-globos/
 
 ---
 
