@@ -1,13 +1,93 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="es">
 <head>
-    <title>Práctica GitHub</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Revienta los Globos 🎈</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fuente estilo caricatura -->
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Hola GitHub</h1>
-    <p>Repositorio de práctica</p>
-    <p>Hola prueba</p>
-    <p>Hola prueba2</p>
+  <div class="bg-bubbles" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">🎈</span>
+      <div>
+        <div class="title">Revienta los Globos</div>
+        <div class="subtitle">Mini juego caricatura + música</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="btnSound" class="btn small" type="button" aria-pressed="true" title="Activar/Desactivar sonido">
+        🔊 Sonido
+      </button>
+      <button id="btnMusic" class="btn small" type="button" aria-pressed="true" title="Activar/Desactivar música">
+        🎵 Música
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hud">
+      <div class="hud-card">
+        <div class="hud-label">Puntos</div>
+        <div id="score" class="hud-value">0</div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Tiempo</div>
+        <div id="time" class="hud-value">30</div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-label">Récord</div>
+        <div id="best" class="hud-value">0</div>
+      </div>
+    </section>
+
+    <section class="stage-card">
+      <div class="stage-top">
+        <div class="tips">
+          <span class="pill">🎯 Clic / toque: explota</span>
+          <span class="pill bad">💣 Evita el globo negro</span>
+          <span class="pill good">⭐ Dorado = +5</span>
+        </div>
+
+        <div class="right">
+          <button id="btnStart" class="btn" type="button">▶️ Jugar</button>
+          <button id="btnRestart" class="btn ghost" type="button" disabled>🔁 Reiniciar</button>
+        </div>
+      </div>
+
+      <div id="stage" class="stage" role="application" aria-label="Área del juego">
+        <div id="overlay" class="overlay">
+          <div class="panel">
+            <h1>🎈 Revienta los Globos</h1>
+            <p>
+              Tienes <b>30 segundos</b>. Explota globos para sumar puntos.<br/>
+              <b>Negro</b> resta puntos, <b>dorado</b> da bonus.
+            </p>
+            <p class="note">Tip: la música se activa al iniciar (por políticas del navegador).</p>
+            <button id="btnPlayOverlay" class="btn big" type="button">🚀 Empezar</button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="stage-footer">
+        <div id="msg" class="msg" aria-live="polite"></div>
+        <div class="legend">
+          <span class="dot dot-red"></span> +1
+          <span class="dot dot-blue"></span> +2
+          <span class="dot dot-gold"></span> +5
+          <span class="dot dot-black"></span> -3
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
